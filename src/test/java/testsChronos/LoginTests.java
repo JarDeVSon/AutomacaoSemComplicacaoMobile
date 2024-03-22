@@ -27,7 +27,6 @@ public class LoginTests {
         loginPage.realizarLogin("teste@chronosacademy.com.br", "123456");
 
         produtosPage = new ProdutosPage();
-
         assertEquals("Conheça todos os nossos cursos", produtosPage.getTxtTituloProdutos());
     }
 

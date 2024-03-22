@@ -7,7 +7,7 @@ Ferramenta Utilizada para criação de mapas mentais.
 
 
 Automação Mobile:
-Vamos juntos construir sua primeira automação web, utilizando Java.
+Vamos juntos construir sua primeira automação mobile, utilizando Java.
 
 
 Android Studio:

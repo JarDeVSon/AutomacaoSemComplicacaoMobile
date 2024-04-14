@@ -15,6 +15,8 @@ public class CadastroMap {
     protected WebElement inpConfirmaSenha;
     @AndroidFindBy(accessibility = "buttonCadastrar_register")
     protected WebElement btnCadastrar;
+    @AndroidFindBy(xpath = "//*[contains(@text, 'Cadastro realizado com sucesso!')]")
+    protected WebElement txtCadastroSucesso;
     @AndroidFindBy(accessibility = "nomeError")
     protected  WebElement txtNomeError;
     @AndroidFindBy(accessibility = "emailError")

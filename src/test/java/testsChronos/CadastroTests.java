@@ -22,10 +22,10 @@ public class CadastroTests {
         cadastroPage = new CadastroPage();
     }
     @Test
-    public void testRealizarCadastro(){
+    public void testRealizarCadastroComSucesso(){
         loginPage.clickLinkCadastrar();
         cadastroPage.realizarCadastro("teste jardeson santos", Math.random()+"testejardo1@bol.com.br","teste123", "teste123");
-
+        assertEquals("Cadastro realizado com sucesso!", cadastroPage.getCadastroSucesso());
     }
     @Test
     public void testRealizarCadastroNomeObrigatorio(){

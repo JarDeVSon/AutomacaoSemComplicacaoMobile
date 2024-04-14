@@ -18,6 +18,10 @@ public class CadastroPage extends CadastroMap {
         inpConfirmaSenha.sendKeys(confirmaSenha);
         btnCadastrar.click();
     }
+
+    public String getCadastroSucesso(){
+        return txtCadastroSucesso.getText();
+    }
     public String getErrorNome(){
         return txtNomeError.getText();
     }

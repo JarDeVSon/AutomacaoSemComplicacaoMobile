@@ -2,6 +2,7 @@ package testsChronos;
 
 import core.Driver;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import pages.LoginPage;
@@ -18,6 +19,11 @@ public class LoginTests {
     @Test
     public void imprimirNoConsole(){
         System.out.println("Primeiro teste!!");
+    }
+    @BeforeEach
+    public void inicializaDriver() throws MalformedURLException {
+        Driver.inicializaDriver();
+        loginPage = new LoginPage();
     }
 
     @Test

@@ -1,6 +1,7 @@
 package testsChronos;
 
 import core.Driver;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import pages.CadastroPage;
@@ -20,6 +21,10 @@ public class CadastroTests {
         Driver.inicializaDriver();
         loginPage = new LoginPage();
         cadastroPage = new CadastroPage();
+    }
+    @AfterEach
+    public void encerraDriver(){
+        Driver.getAppiumDriver().quit();
     }
     @Test
     public void testRealizarCadastroComSucesso(){
@@ -41,6 +46,7 @@ public class CadastroTests {
 
         assertEquals("As senhas não coincidem.",cadastroPage.getErrorConfirmaSenha());
     }
+
     @Test
     public void testRealizarCadastroEmailObrigatorio(){
         loginPage.clickLinkCadastrar();

@@ -61,6 +61,13 @@ public class CadastroTests {
 
         assertEquals("O campo de senha é obrigatório.",cadastroPage.getErrorSenha());
     }
+    @Test
+    public void testRealizarCadastroTamanhoSenhaObrigatorio(){
+        loginPage.clickLinkCadastrar();
+        cadastroPage.realizarCadastro("teste jardo1", "testejardo2@bol.com.br","12345", "12345");
+
+        assertEquals("A senha deve ter no mínimo 6 caracteres.",cadastroPage.getErrorSenha());
+    }
 
     @Test
     public void testRealizarCadastroConfirmaSenhaObrigatorio(){

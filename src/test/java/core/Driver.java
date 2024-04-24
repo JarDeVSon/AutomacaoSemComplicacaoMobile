@@ -8,6 +8,7 @@ import org.openqa.selenium.JavascriptExecutor;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.time.Duration;
 
 public class Driver {
     private static AppiumDriver appiumDriver;
@@ -24,7 +25,7 @@ public class Driver {
         options.setCapability("deviceName","ChronosMobile");
         options.setCapability("appPackage","br.com.chronosacademy");
         options.setCapability("appActivity", "br.com.chronosacademy.MainActivity");
-
+        options.setNewCommandTimeout(Duration.ofSeconds(10));
         appiumDriver = new AppiumDriver(new URL(url), options);
     }
     public static void swipe(int left, int right, String direction, double percent) {

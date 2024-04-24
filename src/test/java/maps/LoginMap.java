@@ -17,4 +17,15 @@ public class LoginMap {
     @AndroidFindBy(accessibility = "naoTemConta_text")
     protected WebElement linkCadastrar;
 
+    @AndroidFindBy(accessibility = "emailError")
+    protected WebElement txtEmailError;
+
+    @AndroidFindBy(accessibility = "authErrorEmail")
+    protected WebElement txtAuthErrorEmail;
+
+    @AndroidFindBy(accessibility = "passwordError")
+    protected WebElement txtPasswordError;
+
+    @AndroidFindBy(accessibility = "authErrorPassword")
+    protected  WebElement txtAuthErrorPassword;
 }

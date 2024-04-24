@@ -21,4 +21,20 @@ public class LoginPage extends LoginMap {
     public void clickLinkCadastrar(){
         linkCadastrar.click();
     }
+    public String getTxtEmailError(){
+        try {
+            return txtEmailError.getText();
+        }catch (Exception e){
+            return txtAuthErrorEmail.getText();
+        }
+
+    }
+
+    public String getTxtPasswordError(){
+        try {
+            return txtPasswordError.getText();
+        }catch (Exception e){
+            return txtAuthErrorPassword.getText();
+        }
+    }
 }

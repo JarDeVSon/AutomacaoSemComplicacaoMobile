@@ -19,7 +19,8 @@ public class LoginSteps {
 
     @Before
     public void inicializaTeste() throws MalformedURLException {
-        Driver.inicializaDriver();
+        //Driver.inicializaDriver();
+        Driver.inicializaDriverPerfecto();
     }
 
     @After

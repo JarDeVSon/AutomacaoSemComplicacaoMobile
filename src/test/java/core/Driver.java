@@ -28,6 +28,20 @@ public class Driver {
         options.setNewCommandTimeout(Duration.ofSeconds(10));
         appiumDriver = new AppiumDriver(new URL(url), options);
     }
+    public static void inicializaDriverPerfecto() throws MalformedURLException {
+        String cloudName = "demo";
+        String securityToken = "eyJhbGciOiJIUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI4YmI4YmZmZS1kMzBjLTQ2MjctYmMxMS0zNTYyMmY1ZDkyMGYifQ.eyJpYXQiOjE3MTM4OTc4NjUsImp0aSI6IjM2NjFhYzdhLWJhNWUtNDVjMS04MzRkLWI0Nzk1ZGRiYTU5NyIsImlzcyI6Imh0dHBzOi8vYXV0aC5wZXJmZWN0b21vYmlsZS5jb20vYXV0aC9yZWFsbXMvZGVtby1wZXJmZWN0b21vYmlsZS1jb20iLCJhdWQiOiJodHRwczovL2F1dGgucGVyZmVjdG9tb2JpbGUuY29tL2F1dGgvcmVhbG1zL2RlbW8tcGVyZmVjdG9tb2JpbGUtY29tIiwic3ViIjoiMTJmYTNmNDYtNTNiMi00ZjI2LWExZDQtNmU0YTQ5YjU4YTk1IiwidHlwIjoiT2ZmbGluZSIsImF6cCI6Im9mZmxpbmUtdG9rZW4tZ2VuZXJhdG9yIiwibm9uY2UiOiJkYzIwNWMwMC1iNTM2LTQ2OTEtYTUzMy04NzVlY2JkZTFhZDYiLCJzZXNzaW9uX3N0YXRlIjoiNmE0OWYyNmQtYjg5MC00YzdlLTgxOGYtZWFjNGQ5OTk1YmQ3Iiwic2NvcGUiOiJvcGVuaWQgb2ZmbGluZV9hY2Nlc3MifQ.-tZ41N5ligFnW8mUoK5DybYG6SUArcVnl2OTTuY2DjU";
+        String url = "https://"+cloudName+".perfectomobile.com/nexperience/perfectomobile/wd/hub";
+        BaseOptions options = new BaseOptions();
+        options.setPlatformName("Android");
+        options.setAutomationName("uiautomator2");
+        options.setCapability("app", "PRIVATE:ChronosAcademy.apk");
+        options.setCapability("model","Pixel 6 Pro");
+        options.setCapability("perfecto:securityToken", securityToken);
+
+        appiumDriver = new AppiumDriver(new URL(url), options);
+    }
+
     public static void swipe(int left, int right, String direction, double percent) {
         Dimension dimension = Driver.getAppiumDriver().manage().window().getSize();
         ((JavascriptExecutor) Driver.getAppiumDriver()).executeScript("mobile: scrollGesture", ImmutableMap.of(
